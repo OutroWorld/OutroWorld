@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outro World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .nav-link {
+            color: #000; /* Default color for links */
+        }
+        .nav-link:hover {
+            color: #1E40AF; /* Hover color (from logo) */
+        }
+        .social-icon {
+            color: #000; /* Default color for social icons */
+            font-size: 1.5rem; /* Increase size for better visibility */
+        }
+        .social-icon:hover {
+            color: #1E40AF; /* Hover color for social icons */
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .logo-border {
+            border: 2px solid #1E40AF; /* Border color from logo */
+            transition: border 0.3s ease-in-out;
+        }
+        .no-border {
+            border: none !important;
+        }
+    </style>
+    <script>
+        window.addEventListener('scroll', function() {
+            const logo = document.getElementById('logo');
+            if (window.scrollY > 50) {
+                logo.classList.add('no-border');
+            } else {
+                logo.classList.remove('no-border');
+            }
+        });
+
+        module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'custom-heading': ['Roboto', 'sans-serif'],
+        'custom-body': ['Open Sans', 'sans-serif'],
+      },
+    },
+  },
+}
+
+    </script>
+</head>
+<body class="bg-gray-100">
+
+<!-- Header -->
+<header class="p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+            <img id="logo" src="logo.png" alt="Outro World Logo" class="w-16 h-16 ">
+            <div class="text-3xl font-bold text-blue-600 ml-2">Outro World</div>
+        </div>
+        <nav>
+            <ul class="flex space-x-6 text-gray-700">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#courses" class="nav-link">Courses</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="flex space-x-4">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/yourusername" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="bg-blue-600 text-white text-center py-20 relative overflow-hidden">
+    <div class="container mx-auto flex flex-col-reverse md:flex-row items-center fade-in">
+        <img src="hero-img.png" alt="Illustration" class="w-full md:w-1/2 float-animation md:mr-10">
+        <div class="text-center md:text-left md:ml-10">
+            <h1 class="text-5xl font-bold">Welcome to Outro World</h1>
+            <p class="text-2xl mt-4">Learn C and C++ from the experts</p>
+            <a href="#contact">
+                <button class="mt-8 px-6 py-3 bg-white text-blue-600 font-semibold rounded hover:bg-gray-200 transition duration-300 ease-in-out transform hover:-translate-y-1">Join Now</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center">
+            <!-- About Text -->
+            <div class="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0 lg:pr-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 font-custom-heading">About Outro World</h2>
+                <p class="text-lg text-gray-600 leading-relaxed font-custom-body">
+                    Welcome to Outro World, where we shape the future by empowering the next generation of programmers. Our mission is to provide top-notch education in C and C++ to students, fostering a deep understanding of these foundational languages. Through innovative teaching methods and a passion for coding, we aim to cultivate skilled developers ready to tackle real-world challenges. At Outro World, we believe in hands-on learning and personalized guidance, ensuring that each student not only masters the syntax but also grasps the concepts that drive modern technology. Join us on this journey to unlock your potential and become a part of the coding revolution.
+                </p>
+            </div>
+            <!-- Animated Human Image -->
+            <div class="lg:w-1/2">
+                <img src="about-img.webp" alt="Animated Human" class="w-full h-auto rounded-lg shadow-lg"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section id="courses" class="bg-gray-100 py-20">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-12 fade-in">Our Courses</h2>
+        <div class="flex flex-wrap justify-center">
+            <!-- C Programming Course -->
+            <div class="bg-white shadow-md rounded p-6 m-4 w-full md:w-1/3 transform hover:scale-105 transition duration-300 ease-in-out">
+                <div class="flex justify-center mb-4">
+                    <img src="c-logo.png" alt="C Programming Logo" class="w-32 h-auto"/>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">C Programming</h3>
+                <p class="text-gray-600 mb-4">Learn the fundamentals of C programming with our comprehensive course.</p>
+                <a href="https://drive.google.com/file/d/11Sw5X5ij06CAkJ6x87P-FdIEohMLN1m6/view?usp=sharing" target="_blank" class="block px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    View Course
+                </a>
+            </div>
+            <!-- C++ Programming Course -->
+            <div class="bg-white shadow-md rounded p-6 m-4 w-full md:w-1/3 transform hover:scale-105 transition duration-300 ease-in-out">
+                <div class="flex justify-center mb-4">
+                    <img src="cpp-logo.png" alt="C++ Programming Logo" class="w-32 h-auto"/>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">C++ Programming</h3>
+                <p class="text-gray-600 mb-4">Master the concepts of C++ programming with our expert-guided course.</p>
+                <a href="https://drive.google.com/file/d/11Sw5X5ij06CAkJ6x87P-FdIEohMLN1m6/view?usp=sharing" target="_blank" class="block px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    View Course
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center">
+            <!-- Contact Image -->
+            <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8 flex justify-center">
+                <img src="contact-us.webp" alt="Contact Us" class="w-full h-auto max-w-md rounded-lg shadow-lg"/>
+            </div>
+            <!-- Contact Form -->
+            <div class="lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-4xl font-bold mb-8 text-gray-800">Contact Us</h2>
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="67c1027f-4d23-4dd2-832d-34df8c14c032">
+                    <div class="mb-4">
+                        <input type="text" name="name" placeholder="Name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out">
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out">
+                    </div>
+                    <div class="mb-4">
+                        <textarea name="message" placeholder="Message" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out h-32 resize-none"></textarea>
+                    </div>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-300 ease-in-out transform hover:-translate-y-1">Send Message</button>
+                </form>
+                <div class="mt-8">
+                    <p class="text-gray-600 mb-2">Phone: <span class="text-gray-800">+91 77960 19768</span></p>
+                    <p class="text-gray-600 mb-2">Email: <span class="text-gray-800">outroworld4@gmail.com</span></p>
+                    <p class="text-gray-600">Address: <span class="text-gray-800">Near Bharati Vidyapeeth's College of Engineering, Kolhapur 416013</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- A changed until this  -->
+    <!-- Footer -->
+   <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto text-center">
+        <!-- Social Media Icons -->
+        <div class="mb-4">
+            <a href="https://facebook.com" target="_blank" class="text-white hover:text-blue-600 mx-2 transition duration-300 ease-in-out transform hover:scale-110">
+                <i class="fab fa-facebook-f fa-lg"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="text-white hover:text-blue-600 mx-2 transition duration-300 ease-in-out transform hover:scale-110">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="text-white hover:text-blue-600 mx-2 transition duration-300 ease-in-out transform hover:scale-110">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
+        </div>
+        <!-- Navigation Links -->
+        <div class="mb-4">
+            <a href="#home" class="text-white hover:text-blue-600 mx-2 transition duration-300 ease-in-out transform hover:translate-y-1">Home</a>
+            <a href="#about" class="text-white hover:text-blue-600 mx-2 transition duration-300 ease-in-out transform hover:translate-y-1">About</a>
+            <a href="#courses" class="text-white hover:text-blue-600 mx-2 transition duration-300 ease-in-out transform hover:translate-y-1">Courses</a>
+            <a href="#contact" class="text-white hover:text-blue-600 mx-2 transition duration-300 ease-in-out transform hover:translate-y-1">Contact</a>
+        </div>
+        <!-- Copyright -->
+        <p class="text-gray-400">&copy; 2024 Outro World. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+
+</html>
